@@ -1,14 +1,29 @@
 console.log('Notes.js ', 'Starting notes.js')
 
-// Export variables
-module.exports.age = 41;
+var addNote = ( title, body) => {
 
-// Export function
-module.exports.addNotes = () => {
-
-    console.log('addNote');
-    return 'New Note';
+    console.log('Adding note', title, body)
 }
 
-// Export function
-module.exports.add = (a,b) => a+b
+var getAll = () => {
+
+    console.log('Getting all notes')
+}
+
+var getNote = (title) => {
+
+    console.log('Getting note', title)
+}
+
+var removeNote = (title) => {
+
+    console.log('Remove note', title)
+}
+
+
+module.exports = {
+    addNote,
+    getAll,
+    getNote,
+    removeNote
+}

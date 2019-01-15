@@ -1,28 +1,29 @@
-console.log('App.js ', 'hello world')
+console.log('App.js ');
 
-const fs = require('fs')
-const os = require('os')
+const fs = require('fs');
+const _ = require('lodash');
+const yargs = require('yargs')
 
-// To install a node module
-// npm install lodash --save
-const _ = require('lodash')
-const notes = require('./notes.js')
+const notes = require('./notes.js');
 
-// Check for strings
-console.log(_.isString(true))
-console.log(_.isString("LeRon"))
+const argv = yargs.argv;
+var command = argv._[0]
+console.log('Command: ', command);
+//console.log('Process ',process.argv)
+console.log('Yargs', argv)
 
-// Remove duplicates in array
-var filterArray = _.uniq(['LeRon', 1, 'LeRon', 1,2,3,4])
-console.log(filterArray);
-
-
-
-// var res = notes.addNotes();
-// console.log(res);
-
-// console.log('Result: ', notes.add(9,-2))
-
-// Create a file and save text inside the file
-// var user = os.userInfo();
-// fs.appendFileSync('greetings.txt', `Hello ${user.username}! You are ${notes.age}.`)
+if (command === 'add') {
+    notes.addNote(argv.title, argv.body)
+}
+else if (command === 'list') {
+    notes.getAll();
+}
+else if (command === 'read') {
+    notes.getNote(argv.title)
+}
+else if (command === 'remove') {
+    notes.removeNote(argv.title)
+}
+else {
+    console.log('Command not reconized')
+}
