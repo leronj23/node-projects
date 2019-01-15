@@ -6,7 +6,7 @@ const os = require('os')
 // To install a node module
 // npm install lodash --save
 const _ = require('lodash')
-const notes = require('./notes.js')
+const notes = require('../notes.js')
 
 // Check for strings
 console.log(_.isString(true))
