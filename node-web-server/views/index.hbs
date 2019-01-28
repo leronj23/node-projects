@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{pageTitle}}</title>
+</head>
+
+<body>
+    {{> header}}
+    {{!-- <p>{{bodyMessage}}</p> --}}
+
+    {{!-- Call the function with an argument --}}
+    <p>{{screenIt bodyMessage}}</p> 
+
+
+    {{!-- Import another hbs file
+     nodemon doesn't check for handlebar file updates.
+     Use nodemon server.js -e js,hbs 
+     Watch the following extensions
+     e = extensions 
+     js = javascript extention 
+     hbs = handlebars extention --}}
+    {{> footer}}
+    {{!-- <footer>
+        <p>Copyright {{currentYear}}</p>
+    </footer> --}}
+</body>
+
+</html>
